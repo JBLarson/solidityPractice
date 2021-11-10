@@ -44,11 +44,16 @@ contract Testing {
     }
 
 
+
+    // event can be tied to the eth javascript SDK
+    event Changed(address a);
+
+
     // setter function assigns a new value to an existing variable
     function setWord(string w) onlyOwner {
         word = w;
+        Changed(msg.sender);
     }
 
 
 }
-
